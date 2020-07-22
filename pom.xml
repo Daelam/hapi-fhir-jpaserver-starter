@@ -278,6 +278,12 @@
                 <artifactId>jetty-maven-plugin</artifactId>
 					 <version>${jetty_version}</version>
                 <configuration>
+                    <systemProperties>
+                        <systemProperty>
+                            <name>org.eclipse.jetty.server.Request.maxFormContentSize</name>
+                            <value>40000000</value>
+                        </systemProperty>
+                    </systemProperties>
                     <webApp>
                         <contextPath>/hapi-fhir-jpaserver</contextPath>
                         <allowDuplicateFragmentNames>true</allowDuplicateFragmentNames>
